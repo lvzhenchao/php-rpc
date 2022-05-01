@@ -24,7 +24,10 @@ class Client {
         $this->protocol  = "RPC-CLASS:{$class}\n";
         $this->protocol .= "RPC-METHOD:{$method}\n";
         $this->protocol .= "RPC-PARAM:".json_encode($param)."\n";
-        echo socket_write($this->socket,$this->protocol, strlen($this->protocol));
+
+        socket_write($this->socket, $this->protocol, strlen($this->protocol));
+
+        echo socket_read($this->socket, 1024);
     }
 }
 
