@@ -7,3 +7,9 @@
 ## RPC架构，垂直应用越来越多时，独立成单独的服务
 ## SOA架构
 ## 微服务架构
+# RPC和REST区别
+- REST也是一种RPC
+## REST 通常采用http+json实现
+## RPC http/socket + json xml 
+## rest 一般主要是处理resoure接口服务，增删改查
+## rpc 对内提供服务
