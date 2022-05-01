@@ -1,14 +1,30 @@
 <?php
 
-$socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
-socket_set_option($socket, SOL_SOCKET, SO_REUSEADDR, true);
-socket_bind($socket, 0, 9501);
-socket_listen($socket);
+Class Server {
 
-while (true) {
-    $conSocket = socket_accept($socket);
-    $str = "hello rpc ".date("Y-m-d H:i:s")."\n";
+    public $socket;
+    public $ip   = 0;
+    public $port = 9501;
 
-    echo socket_read($conSocket, 1024);
-//    socket_write($conSocket ,$str, strlen($str));
+    public function __construct()
+    {
+        $this->socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+        socket_set_option($this->socket, SOL_SOCKET, SO_REUSEADDR, true);
+        socket_bind($this->socket, $this->ip, $this->port);
+        socket_listen($this->socket);
+
+        while (true) {
+            $conSocket = socket_accept($this->socket);
+            $str = "hello rpc ".date("Y-m-d H:i:s")."\n";
+
+            $data = socket_read($conSocket, 1024);
+            socket_write($conSocket , $data, strlen($data));
+        }
+
+    }
+
 }
+
+new Server();
+
+
