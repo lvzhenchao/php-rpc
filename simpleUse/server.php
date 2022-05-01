@@ -7,7 +7,8 @@ socket_listen($socket);
 
 while (true) {
     $conSocket = socket_accept($socket);
-    $str = "hello rpc \n";
+    $str = "hello rpc ".date("Y-m-d H:i:s")."\n";
 
-    socket_write($conSocket ,$str, strlen($str));
+    echo socket_read($conSocket, 1024);
+//    socket_write($conSocket ,$str, strlen($str));
 }
