@@ -13,3 +13,9 @@
 ## RPC http/socket + json xml 
 ## rest 一般主要是处理resoure接口服务，增删改查
 ## rpc 对内提供服务
+
+# RPC框架与具体的协议无关，rpc可基于http或tcp协议，越底层越快
+- tcp 是传输层协议
+- http 是应用层协议
+
+# RPC的数据形式，xml、json、二进制
