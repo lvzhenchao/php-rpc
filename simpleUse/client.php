@@ -32,6 +32,6 @@ class Client {
 }
 
 $client = new Client("127.0.0.1", 9501);
-$client->send('User', 'Index', ['name' => 'lzc', 'age' => 13]);
+$client->send('User1', 'Index', ['name' => 'lzc', 'age' => 13]);
 
 
