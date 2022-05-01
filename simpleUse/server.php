@@ -27,6 +27,11 @@ Class Server {
             $class  = $class[1];
             $method = $method[1];
             $param  = $param[1];
+
+            if (!file_exists(__DIR__."/class/".$class.".php")) {
+                socket_write($conSocket , "当前类不存在", strlen("当前类不存在"));
+                die;
+            }
             require_once __DIR__."/class/".$class.".php";
 
             $obj = new $class;
