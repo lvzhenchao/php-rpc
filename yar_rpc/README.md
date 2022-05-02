@@ -18,13 +18,9 @@
 - wget http://pecl.php.net/get/yar-2.3.0.tgz
 - cd yar-2.3.0
 - /www/server/php/74/bin/phpize 
-- ./configure --with-php-config=/www/server/php/74/bin/php-config
+- ./configure --with-php-config=/www/server/php/74/bin/php-config  --enable-msgpack
 - make && make install
-- extension=/www/server/php/74/lib/php/extensions/no-debug-non-zts-20190902/msgpack.so
-
-
-
-
+- extension=/www/server/php/74/lib/php/extensions/no-debug-non-zts-20190902/yar.so
 
 
 
