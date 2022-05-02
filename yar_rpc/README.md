@@ -24,6 +24,10 @@
 
 
 
+# server responsed non-200 code '400' 【因为是post请求，】
+- $client = new \Yar_Client('http://yar.com/server.php');//post请求
+- 
+
 
 
 
