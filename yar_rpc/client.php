@@ -8,11 +8,13 @@
 //
 //echo $client->register();
 
-Yar_Concurrent_Client::call('http://yar.com/server.php','login',[]);
+//并行，解决效率
 
-Yar_Concurrent_Client::loop('call_func');
+Yar_Concurrent_Client::call('http://yar.com/server.php','login',[]);//注册并行服务
 
-function call_func($res,$info){
+Yar_Concurrent_Client::loop('call_func');//发送服务
+
+function call_func($res,$info){//前置中间件；类似
     if($res==null){
         echo '处理一些 发送前要处理的逻辑';
     }else{
