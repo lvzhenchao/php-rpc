@@ -1,21 +1,35 @@
 <?php
-class User {
+
+class User{
+    
     /**
-     * this is login function
-     * @return string
-     */
-    public function login() {
-        return "login";
+
+      this is login function
+
+    */
+
+    public function login(){
+    
+        return 'login success...........';
     }
 
     /**
-     * this is register function
-     * @return string
-     */
-    public function register() {
-        return "register";
+        this is register function
+
+    */
+    
+    public function register(){
+        return 'register success';
     }
+
+    public function logout($str){
+        return $str;
+    }
+
 }
 
+
 $server = new Yar_Server(new User());
+
 $server->handle();
+
